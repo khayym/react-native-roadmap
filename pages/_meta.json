@@ -3,6 +3,9 @@
   "stage_1": {
     "title": "Stage 1: Zen of Coding 👋🏻"
   },
+  "stage_2": {
+    "title": "Stage 2: Heroes of Styling 🌈"
+  },
   "about": {
     "title": "About",
     "type": "page"
