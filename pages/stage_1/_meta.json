@@ -1,3 +1,8 @@
 {
-  "installation": "pre-work software + tools installation"
+  "installation": "Installation",
+  "terminal_bash": "Introduction to Basic Terminal/Bash Commands",
+  "basic_html": "Basic introduction to HTML",
+  "introduction_css": "Introduction to CSS",
+  "common_css_properties": "Common CSS Properties",
+  "git": "Git version control"
 }

@@ -1,0 +1,124 @@
+- **Introduction to CSS**
+
+  CSS (Cascading Style Sheets) is a language used to style and layout HTML documents. While HTML defines the structure and content of a web page, CSS defines how that content is presented to the user. With CSS, you can control the color, font, size, spacing, and layout of HTML elements, making it an essential tool for web developers.
+  CSS uses a set of rules to target HTML elements and apply styles to them. Each rule consists of a selector, which targets one or more elements, and a set of declarations, which define the styles to apply to those elements. Here's the basic syntax of a CSS rule:
+
+  ```css
+  selector {
+    property: value;
+    property: value;
+    ...;
+  }
+  ```
+
+  The **`selector`** targets the HTML element(s) you want to style, and the **`property: value`** pairs define the styles to apply. For example, to set the background color of all paragraphs to yellow, you can use the following rule:
+
+  ```css
+  p {
+    background-color: yellow;
+  }
+  ```
+
+  There are three ways to apply CSS to an HTML document:
+
+  1. Inline CSS: You can add styles directly to an HTML element using the **`style`** attribute. For example:
+
+  ```html
+  <p style="color: red;">This paragraph is red.</p>
+  ```
+
+  2. Internal CSS: You can add CSS to an HTML document using the **`<style>`** element in the document's head section. For example:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        p {
+          color: red;
+        }
+      </style>
+    </head>
+    <body>
+      <p>This paragraph is red.</p>
+    </body>
+  </html>
+  ```
+
+  3. External CSS: You can put the CSS rules in a separate file with a **`.css`** extension and link to it from the HTML document using the **`<link>`** element in the document's head section. For example:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+      <p>This paragraph has styles from an external CSS file.</p>
+    </body>
+  </html>
+  ```
+
+  Here are some common CSS properties and values you'll need to know:
+
+  - **`color`**: The color of text.
+  - **`font-size`**: The size of text.
+  - **`font-family`**: The font used for text.
+  - **`background-color`**: The background color of an element.
+  - **`width`**, **`height`**: The dimensions of an element.
+  - **`margin`**, **`padding`**: The space around and within an element, respectively.
+  - **`display`**: The layout mode of an element, such as **`block`**, **`inline`**, or **`flex`**.
+    Here's an example of a CSS file that styles the HTML elements in our previous example:
+
+  ```css
+
+  /* styles.css */
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    color: navy;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    padding: 8px;
+    border: 1px solid black;
+  }
+
+  form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  label, input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    background-color: navy;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+    padding-left:
+
+  ```
