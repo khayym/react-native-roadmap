@@ -1,0 +1,30 @@
+Type conversion in JavaScript refers to the process of converting a value from one data type to another. JavaScript is a dynamically-typed language, which means that the type of a variable can change during runtime. As a result, it's often necessary to perform type conversions in order to ensure that your code is functioning as intended.
+
+There are two main ways to perform type conversions in JavaScript: explicit and implicit conversions.
+
+Explicit conversions occur when you use one of the type conversion functions provided by JavaScript, such as **`String()`**, **`Number()`**, **`Boolean()`**, `**toString()**` and **`parseInt()`**. Here are some examples:
+
+```jsx
+let x = 123;
+let y = String(x); // y is now a string "123"
+
+let a = '4.56';
+let b = Number(a); // b is now a number 4.56
+
+let c = 'true';
+let d = Boolean(c); // d is now a boolean value true
+```
+
+Implicit conversions occur automatically when you perform certain operations, such as addition or comparison, between values of different types. For example:
+
+```jsx
+let x = '123';
+let y = 456;
+let z = x + y; // z is now the string "123456"
+
+let a = 'hello';
+let b = 123;
+let c = a < b; // c is now false
+```
+
+It's important to be mindful of type conversions in JavaScript, as they can sometimes lead to unexpected results. For example, if you're performing arithmetic operations with numbers, it's a good idea to make sure that the values you're working with are actually numbers, rather than strings that happen to look like numbers.

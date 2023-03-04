@@ -1,0 +1,34 @@
+- **Variables, Constants & Comments**
+
+  In JavaScript, variables are used to store values that can be used later in your code. Constants are similar to variables, but their values cannot be changed once they are set. Comments are used to add notes to your code that are ignored by the JavaScript engine.
+
+  - **`var`** is a keyword in JavaScript that was used to declare variables prior to the introduction of **`let`** and **`const`**. The **`var`** keyword has function scope, which means that a variable declared with **`var`** is accessible within the entire function in which it was declared, and can also be accessed within inner functions. One of the issues with **`var`** is that it is function scoped, but it also has a strange behavior called "hoisting". Hoisting refers to the behavior of moving variable and function declarations to the top of their respective scopes, which means that a variable declared with **`var`** can be used before it is declared in the code.
+    ```jsx
+    console.log(x); // undefined
+    var x = 10;
+    ```
+    Even though **`x`** is declared after the **`console.log`** statement, it still outputs **`undefined`** instead of throwing a ReferenceError. This is because the declaration of **`x`** is hoisted to the top of the function and the assignment of **`10`** remains in its original place.
+    For these reasons, it's generally recommended to use **`let`** and **`const`** instead of **`var`** when declaring variables in JavaScript. **`let`** and **`const`** have block scope and do not exhibit the hoisting behavior of **`var`**
+  - Variables: Variables are containers for storing data values. In JavaScript, you can declare a variable using the **`var`**, **`let`**, or **`const`** keyword. The difference between **`var`** and **`let`** is that **`var`** has function scope while **`let`** has block scope. The **`const`** keyword is used to declare a constant that cannot be reassigned after it has been declared.
+
+    ```jsx
+    let name = 'John Doe';
+    const PI = 3.14;
+    ```
+
+  - Constants: Constants are similar to variables, but their value cannot be changed once it has been assigned. In JavaScript, you can declare a constant using the **`const`** keyword.
+    ```jsx
+    const PI = 3.14;
+    ```
+  - Comments: Comments are used to add annotations and explanations to your code. They are ignored by the JavaScript interpreter and are only intended to be read by developers. In JavaScript, you can create single-line comments using **`//`** and multi-line comments using **`/* */`**.
+
+    ```jsx
+    // This is a single-line comment
+
+    /*
+      This is a
+      multi-line comment
+    */
+    ```
+
+    ![https://lh3.googleusercontent.com/-YXC3gtpMlko/X3HA5DHH6MI/AAAAAAAAB3Q/VYM81zAFldY-cItuj7GMYA0Xy7Fy0GWBgCLcBGAsYHQ/image.png](https://lh3.googleusercontent.com/-YXC3gtpMlko/X3HA5DHH6MI/AAAAAAAAB3Q/VYM81zAFldY-cItuj7GMYA0Xy7Fy0GWBgCLcBGAsYHQ/image.png)

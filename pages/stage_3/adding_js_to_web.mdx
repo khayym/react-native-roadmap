@@ -1,0 +1,41 @@
+- **Adding JavaScript to a Web Page**
+
+  JavaScript is a powerful language that allows you to add interactivity to your web pages. To use JavaScript in a web page, you need to include it in your HTML code.
+  There are two ways to add JavaScript to a web page:
+
+  1. Inline JavaScript: You can add JavaScript code directly to an HTML element by using the **`onclick`** attribute. For example:
+
+  ```jsx
+  <button onclick="alert('Hello, World!')">Click me!</button>
+  ```
+
+  This code creates a button that, when clicked, will display an alert with the text "Hello, World!".
+  While this method is simple, it's generally not recommended because it can make your HTML code difficult to read and maintain.
+
+  2. External JavaScript: The preferred method for adding JavaScript to a web page is to put the code in a separate file with a **`.js`** extension and then link to it in your HTML code using the **`script`** tag. For example:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>My Web Page</title>
+      <script src="myscript.js"></script>
+    </head>
+    <body>
+      <p>My web page content goes here.</p>
+    </body>
+  </html>
+  ```
+
+  In this example, we've created a file called **`myscript.js`** and linked to it in the head of our HTML code using the **`script`** tag. The JavaScript code in **`myscript.js`** will execute when the web page is loaded.
+  Here are some best practices for adding JavaScript to a web page:
+
+  1. Put your JavaScript code in a separate file: This makes your HTML code easier to read and maintain.
+  2. Use descriptive variable names: This makes your code easier to understand and maintain.
+  3. Comment your code: Comments can help you remember what your code does and make it easier for others to understand.
+  4. Use semicolons: While JavaScript doesn't require you to use semicolons at the end of each line of code, it's considered best practice to do so.
+     If you're new to JavaScript, here are some resources to help you get started:
+  5. Video: "JavaScript Tutorial for Beginners" by Programming with Mosh - This video provides an introduction to JavaScript, covering topics such as variables, data types, functions, and objects.
+     Link: **[https://www.youtube.com/watch?v=W6NZfCO5SIk](https://www.youtube.com/watch?v=W6NZfCO5SIk)**
+  6. Article: "The Complete JavaScript Handbook" by Flavio Copes - This article provides a comprehensive guide to JavaScript, covering topics such as syntax, data types, functions, and objects.
+     Link: **[https://www.freecodecamp.org/news/the-complete-javascript-handbook-f26b2c71719c/](https://www.freecodecamp.org/news/the-complete-javascript-handbook-f26b2c71719c/)**

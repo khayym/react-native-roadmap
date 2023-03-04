@@ -1,0 +1,28 @@
+- **`Null`**: The value **`null`** represents the intentional absence of any object value. It is explicitly set by the programmer to indicate that there is no value. For example:
+  ```jsx
+  let x = null;
+  console.log(x); // null
+  ```
+- **`Undefined`**: The value **`undefined`** is automatically assigned to variables that are declared but not initialized. For example:
+  ```jsx
+  let x;
+  console.log(x); // undefined
+  ```
+- **`Booleans`**: The **`Booleans`** data type is used to represent truth values (**`true`** or **`false`**). They are typically used in conditions, loops, and other control structures to make decisions in your code. For example:
+  ```jsx
+  let x = true;
+  let y = false;
+  ```
+- Difference between `null` and `undefined`
+  When checking for `null` or `undefined`, beware of the [differences between equality (==) and identity (===) operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators), as the former performs type-conversion.
+  ```jsx
+  typeof null; // "object" (not "null" for legacy reasons)
+  typeof undefined; // "undefined"
+  null === undefined; // false
+  null == undefined; // true
+  null === null; // true
+  null == null; // true
+  !null; // true
+  Number.isNaN(1 + null); // false
+  Number.isNaN(1 + undefined); // true
+  ```

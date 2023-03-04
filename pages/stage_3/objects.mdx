@@ -1,0 +1,46 @@
+- **Objects**
+
+  - **[Dot notation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#dot_notation)**
+  - **[Bracket notation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#bracket_notation)**
+  - **[Setting object members](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#setting_object_members)**
+    In JavaScript, an object is a collection of properties and methods that are grouped together to represent a single entity. Objects can be thought of as a key-value store, where each key represents a property and each value represents its corresponding value.
+    Here's an example of an object in JavaScript:
+
+  ```jsx
+  let person = {
+    name: 'John Doe',
+    age: 30,
+    job: 'Developer',
+    speak: function () {
+      console.log('Hello, my name is ' + this.name);
+    },
+  };
+  ```
+
+  In the example above, **`person`** is an object with four properties: **`name`**, **`age`**, **`job`**, and **`speak`**. The **`speak`** property is a function, which is also known as a method.
+  To access the properties of an object, you can use dot notation:
+
+  ```jsx
+  console.log(person.name); // "John Doe"
+  console.log(person.age); // 30
+  ```
+
+  You can also access the properties of an object using bracket notation, which allows you to access properties using a string expression:
+
+  ```jsx
+  console.log(person['name']); // "John Doe"
+  console.log(person['age']); // 30
+  ```
+
+  In addition to properties, objects can also have methods, which are functions that are associated with an object. To call a method, you can use dot notation followed by parentheses:
+
+  ```jsx
+  person.speak(); // "Hello, my name is John Doe"
+  ```
+
+  Objects are a fundamental concept in JavaScript and are used to represent real-world objects, such as a person, an event, or a car. Understanding how to create and manipulate objects is essential for any JavaScript programmer.
+
+1. Video: "Javascript Objects Explained | Javascript Objects Tutorial"
+   **[https://www.youtube.com/watch?v=rLPwCAqyCAE](https://www.youtube.com/watch?v=rLPwCAqyCAE)**
+2. Article: "About Objects"
+   **[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**

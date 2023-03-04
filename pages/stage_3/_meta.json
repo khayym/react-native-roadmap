@@ -1,0 +1,14 @@
+{
+  "welcome": "What is programming language | Hello, World",
+  "what_is_js": "What is JavaScript",
+  "adding_js_to_web": "Adding JavaScript to a Web Page",
+  "browser_console": "The Browser Console",
+  "variables_constants_comment": "Variables, Constants & Comments",
+  "data_types": "Data Types",
+  "common_strings_methods": "String and Common String Methods & Template strings",
+  "numbers": "Numbers",
+  "null_undefined_booleans": "Null & Undefined & Booleans",
+  "type_conversion": "Type Conversion",
+  "arrays": "Arrays",
+  "objects": "Objects"
+}

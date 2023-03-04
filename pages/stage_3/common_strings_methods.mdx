@@ -1,0 +1,110 @@
+- **String and Common String Methods & Template strings**
+
+  Strings are an important data type in JavaScript, used to represent text values. In this section, we'll look at common string methods and the use of template strings.
+  Creating Strings:
+  Strings can be created using single or double quotes, or backticks for template strings:
+
+  ```jsx
+  let greeting = 'Hello';
+  let message = 'How are you?';
+  let name = `John`;
+  ```
+
+  Common String Methods:
+  JavaScript provides a number of methods for working with strings:
+
+  1. `length`: Returns the length of the string.
+
+  ```jsx
+  let greeting = 'Hello';
+  console.log(greeting.length); // 5
+  ```
+
+  2. `indexOf`: Returns the index of the first occurrence of a substring.
+
+  ```jsx
+  let message = 'How are you?';
+  console.log(message.indexOf('are')); // 4
+  ```
+
+  3. `slice`: Returns a substring from a given start index to an end index (optional).
+
+  ```jsx
+  let name = 'John';
+  console.log(name.slice(0, 2)); // 'Jo'
+  ```
+
+  4. `toUpperCase/toLowerCase`: Returns a new string with all uppercase or lowercase characters.
+
+  ```jsx
+  let message = 'How are you?';
+  console.log(message.toUpperCase()); // "HOW ARE YOU?"
+  console.log(message.toLowerCase()); // "how are you?"
+  ```
+
+  5. `replace`: Replaces a specified substring with a new string.
+
+  ```jsx
+  let message = 'Hello, how are you?';
+  console.log(message.replace('Hello', 'Hi')); // "Hi, how are you?"
+  ```
+
+  6. `split`: Splits a string into an array of substrings based on a specified separator.
+
+  ```jsx
+  let message = 'The quick brown fox jumps over the lazy dog';
+  let words = message.split(' ');
+  console.log(words); // ["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+  ```
+
+  7. `trim`: Removes whitespace from both ends of a string.
+
+  ```jsx
+  let message = '   Hello, World!   ';
+  console.log(message.trim()); // "Hello, World!"
+  ```
+
+  8. `concat`: Joins two or more strings together.
+
+  ```jsx
+  let str1 = 'Hello';
+  let str2 = 'World';
+  console.log(str1.concat(', ', str2, '!')); // "Hello, World!"
+  ```
+
+  9. `charAt`: Returns the character at a specified index in a string.
+
+  ```jsx
+  let message = 'Hello, World!';
+  console.log(message.charAt(7)); // "W"
+  ```
+
+  10. `startsWith/endsWith`: Returns true if a string starts or ends with a specified substring.
+
+  ```jsx
+  let message = 'Hello, World!';
+  console.log(message.startsWith('Hello')); // true
+  console.log(message.endsWith('World!')); // true
+  ```
+
+  Template Strings:
+  Template strings are a new feature in ES6 that allow for more expressive string formatting. They are created using backticks instead of quotes, and allow for embedded expressions using **`${}`**:
+
+  ```jsx
+  let name = 'John';
+  let greeting = `Hello ${name}`;
+  console.log(greeting); // "Hello John"
+  ```
+
+  Template strings can also span multiple lines:
+
+  ```jsx
+  let message = `This is a
+  multi-line
+  string`;
+  console.log(message); // "This is a\nmulti-line\nstring"
+  ```
+
+Video: "JavaScript Strings" https://www.youtube.com/watch?v=09BwruU4kiY&t=1s
+
+Article: "String" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
