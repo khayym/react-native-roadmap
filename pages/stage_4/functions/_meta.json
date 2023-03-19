@@ -1,0 +1,8 @@
+{
+  "about": "What is function",
+  "parameters": "Function parameters",
+  "expression": "Function expression",
+  "scope": "Function scope",
+  "closure": "Closures",
+  "arrow": "Arrow functions"
+}

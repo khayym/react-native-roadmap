@@ -1,0 +1,52 @@
+In JavaScript, a function is a block of reusable code that performs a specific task. It is a set of statements that take inputs, perform some operations on them, and produce an output. Functions in JavaScript can be defined using the **`function`** keyword and can be called later on to execute the code inside them.
+Here is an example of a simple function in JavaScript:
+
+```jsx
+function greet(name) {
+  console.log('Hello, ' + name + '!');
+}
+```
+
+This function is called **`greet`**, and it takes one parameter, **`name`**. When this function is called, it will print a message to the console that says "Hello, [name]!" with the **`name`**
+parameter replacing the placeholder. Here's an example of calling the **`greet`**
+function:
+
+```jsx
+greet('John'); // Output: Hello, John!
+```
+
+In the above example, the string "John" is passed as an argument to the **`greet`** function, and the function replaces the **`name`** placeholder with "John" in the message it prints to the console.
+Functions can also return a value using the **`return`** keyword. Here's an example of a function that takes two numbers and returns their sum:
+
+```jsx
+function add(a, b) {
+  return a + b;
+}
+```
+
+This function is called **`add`**, and it takes two parameters, **`a`** and **`b`**. When this function is called, it will return the sum of **`a`** and **`b`**. Here's an example of calling the **`add`**
+function:
+
+```jsx
+var result = add(2, 3);
+console.log(result); // Output: 5
+```
+
+In the above example, the **`add`** function is called with the arguments **`2`** and **`3`**, and the result is assigned to the variable **`result`**. The **`console.log`** statement then prints the value of **`result`** to the console, which is **`5`**.
+Functions in JavaScript can also be assigned to variables, just like any other value. Here's an example of assigning a function to a variable:
+
+```jsx
+var multiply = function (a, b) {
+  return a * b;
+};
+```
+
+This function is assigned to the variable **`multiply`**, and it takes two parameters, **`a`** and **`b`**. When this function is called, it will return the product of **`a`** and **`b`**. Here's an example of calling the **`multiply`** function:
+
+```jsx
+var result = multiply(2, 3);
+console.log(result); // Output: 6
+```
+
+In the above example, the **`multiply`**function is called with the arguments **`2`** and **`3`**,
+and the result is assigned to the variable **`result`**.The **`console.log`** statement then prints the value of **`result`** to the console, which is **`6`**.

@@ -1,0 +1,56 @@
+    In JavaScript, functions can be defined in various ways. One method is using function expressions. A function expression lets you define a function and assign it to a variable, which can then be used as a function.
+
+    The syntax for a function expression is:
+
+    ```jsx
+    var functionName = function(parameters){
+    // function body
+    };
+    ```
+
+    The syntax above defines a **`functionName`** variable that holds a function expression.
+    The function can have one or more parameters in its parentheses.
+    The function body contains the code to execute when calling the function.
+
+    Here's an example of a function expression:
+
+    ```jsx
+    var add = function(num1, num2){
+    return num1 + num2;
+    };
+
+    console.log(add(2, 3)); // output: 5
+    ```
+
+    The function expression **`add`** takes two numbers, **`num1`** and **`num2`**, and returns their sum.
+
+    Anonymous functions are one benefit of function expressions. Anonymous functions lack a name. They are useful when passing a function as an argument to another function or using it as a callback function.
+
+    Here is an anonymous function expression example:
+
+    ```jsx
+
+    var multiply = function(num1, num2){
+      return num1 * num2;
+    };
+
+    console.log(multiply(2, 3)); // output: 6
+
+    ```
+
+    In the above example, the function expression **`multiply`** is anonymous because it does not have a name.
+
+    Function expressions can also be used as IIFE (Immediately Invoked Function Expression) which is a function that is executed right after it's defined. This pattern is useful when you want to create a private scope for your code, and avoid polluting the global namespace.
+
+    Here is an example of an IIFE using function expression:
+
+    ```jsx
+    (function(){
+    var message = "Hello, World!";
+    console.log(message);
+    })();
+    ```
+
+    In the above example, we define an anonymous function and immediately invoke it.
+    The function declares a variable **`message`** and logs it to the console.
+    Since the variable **`message`** is defined inside the function, it cannot be accessed outside of it.

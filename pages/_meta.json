@@ -1,13 +1,16 @@
 {
   "index": "Introduction",
   "stage_1": {
-    "title": "Stage 1: Zen of Coding 👋🏻"
+    "title": "Stage 1: Zen of Coding"
   },
   "stage_2": {
-    "title": "Stage 2: Heroes of Styling 🌈"
+    "title": "Stage 2: Heroes of Styling"
   },
   "stage_3": {
-    "title": "Stage 3: Welcome to JavaScript 💪🏻"
+    "title": "Stage 3: Welcome to JavaScript"
+  },
+  "stage_4": {
+    "title": "Stage 4: Intro to Control Flow"
   },
   "about": {
     "title": "About",

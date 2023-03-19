@@ -1,0 +1,70 @@
+Conditional statements are implemented when you need to perform different actions based on different conditions. We recently used conditional type logic in the loops that we implemented, but conditionals are different from what we were just working with. In JavaScript, the conditional statements that we have are `if`, `else if`, `else`, and `switch` statements.
+
+- **If, Else If, Else**
+  The `if` statement is used when we want a block of code to be run as long as the condition it true. Like so:
+
+  ```jsx
+  if (4 * 4 = 16) {
+   console.log('This will run!')
+  }
+  // 'This will run!'
+  ```
+
+  This code will always print `'This will run!'` because 4 \* 4 is always going equal 16. Let’s say we were writing something a little more complex, and wanted to log some code based on a different condition if the first one is false. That’s where `else if` comes in! This condition runs when the condition before it is false.
+
+  ```jsx
+  const hungryFor = ['pizza', 'sushi', 'french fries'];
+
+  for (let i = 0; i < hungryFor.length; i++) {
+    if (hungryFor[i] === 'pizza') {
+      console.log("I'm hungry for " + hungryFor[i]);
+    } else if (hungryFor[i] === 'french fries') {
+      console.log('But ' + hungryFor[i] + ' are also tasty!');
+    }
+  } // 'I'm hungry for pizza'
+  // 'But french fries are also tasty!'
+  ```
+
+  In this example, we iterated through the `hungryFor` array and had two conditionals inside it stating that if the index of the `hungryFor` array equaled `'pizza'`, then log a specific string. In this case, only the strings `'pizza'` and `'french fries'` were printed. `'sushi'` wasn’t because it never met the conditionals requirements. If we wanted to set a default value to this `if` statement, then we would have to use `else` . The `else` condition only runs if everything before it is false.
+
+  ```jsx
+  const hungryFor = 'sushi';
+
+  if (hungryFor === 'pizza') {
+    console.log('I will not print');
+  } else if (hungryFor === 'french fries') {
+    console.log('I will not print');
+  } else {
+    console.log('But I will :)');
+  } // 'But I will :)'
+  ```
+
+  Since the variable `hungryFor` is equal to just one string, the first two conditions are both false, so the `else` code block only runs.
+
+- **Switch**
+  Switch statements serve the same purpose as `if` statements, however, they have their share of differences. `switch()` first takes in an expression and evaluates it once. If any of the preceding cases match the expression, then the return statement within that case will be executed.
+
+  ```jsx
+  function getDayOfTheWeek(num) {
+    switch (num) {
+      case 1:
+        return 'Monday';
+      case 2:
+        return 'Tuesday';
+      case 3:
+        return 'Wednesday';
+      case 4:
+        return 'Thursday';
+      case 5:
+        return 'Friday';
+      case 6:
+        return 'Saturday';
+      case 7:
+        return 'Sunday';
+    }
+  }
+
+  console.log(getDayOfTheWeek(4)); // 'Thursday'
+  ```
+
+  In this example we have a function that takes in a number as an argument. Inside that code block is a switch statement that have various cases which return strings corresponding to the days of the week. At the end of the snippet, we `console.log()` the function call and passed in 4 which printed out `'Thursday'` because that was under the fourth case. It’s best to use `switch` statements when you’re testing one value, and `if`, `else if` , and `else` when you’re testing multiple conditions.

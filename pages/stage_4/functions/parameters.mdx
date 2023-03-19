@@ -1,0 +1,44 @@
+In JavaScript, functions can have zero or more parameters.
+Function parameters are variables used inside a function to perform specific operations.
+You define a function parameter by specifying a variable name inside the function's parentheses.
+Syntax:
+
+```jsx
+function <function-name>(parameter1, parameter2, ...){
+// function body
+}
+```
+
+Here's an example of a function with two parameters:
+
+```jsx
+function greetUser(firstName, lastName) {
+console.log(Hello, ${firstName} ${lastName});
+}
+```
+
+The **`greetUser()`** function has two parameters: **`firstName`** and **`lastName`**.
+Inside the function, these parameters act like normal variables to perform specific tasks.
+To call the function, pass values for each parameter, separated by commas.
+Here's an example calling **`greetUser()`** with two arguments:
+
+```jsx
+greetUser('John', 'Doe');
+```
+
+In the above example, the values "John" and "Doe" are passed as arguments to the **`greetUser()`** function, and these values are assigned to the **`firstName`** and **`lastName`** parameters, respectively.
+It's important to note that if you pass fewer arguments than the number of parameters in a function, the missing parameters will have a value of **`undefined`**.
+
+```jsx
+greetUser('John');
+```
+
+In the above example, only one argument is passed to the **`greetUser()`** function, so the **`lastName`** parameter will have a value of **`undefined`**.
+You can also pass more arguments than the number of parameters in a function, but those extra arguments will be ignored by the function.
+
+```jsx
+greetUser('John', 'Doe', 'Smith');
+```
+
+In the above example, the function **`greetUser()`** takes only two parameters, but three arguments are passed to the function. The extra argument "Smith" will be ignored by the function.
+Overall, function parameters are a useful feature in JavaScript that allows you to create reusable functions that can perform specific operations based on the values passed as arguments.

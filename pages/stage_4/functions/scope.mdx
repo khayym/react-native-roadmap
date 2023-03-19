@@ -1,0 +1,36 @@
+    Variables defined inside a function are local to that function and cannot be accessed from outside it.
+    However, a function can access all variables and functions defined in the scope in which it is defined.
+
+    In other words, a global function can access all global variables. A function defined inside another function can also access all variables of its parent function, as well as any other variables accessible to the parent function.
+
+    In short, a function's scope determines which variables it can access. A local function can only access local variables, while a global function can access all global variables.
+
+    ```jsx
+    // The following variables are defined in the global scope
+    const num1 = 20;
+    const num2 = 3;
+    const name = "Chamakh";
+
+    // This function is defined in the global scope
+    function multiply() {
+    return num1 * num2;
+    }
+
+    multiply(); // Returns 60
+    ```
+
+    ```jsx
+    // A nested function example
+    function getScore() {
+    const num1 = 2;
+    const num2 = 3;
+
+    function add() {
+    return ${name} scored ${num1 + num2};
+    }
+
+    return add();
+    }
+
+    getScore(); // Returns "Chamakh scored 5"
+    ```

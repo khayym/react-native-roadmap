@@ -1,0 +1,47 @@
+Loops are iteration statements that will keep running until there is either nothing left to loop over, or if the condition becomes false. There are many types of loops in JavaScript, but for now I’m going to be going over three of them. Let’s start with the most common used one, the `for` loop. The `for` is a conditional loop, which means that it runs based on if a certain condition is true. As long as it stays true, the code is going to keep executing.
+
+```jsx
+const edm = ['House', 'Dubstep', 'Drum and Bass'];
+
+for (let i = 0; i < edm.length; i++) {
+  console.log(edm[i]);
+} // 'House'
+// 'Dubstep'
+// 'Drum and Bass'
+```
+
+Let’s break down what’s going on here. The syntax for a `for` loop contains a variable declaration of `i` which is the index of the array `edm` that we are currently iterating over. After that we have the condition that checks if `i` is less than the length of our array, followed by an increase in `i`. Basically, the for loop is saying to itself “okay so the index is 0, as long as that’s less than the length of the array, we are going to execute the code inside the code block and increase the value of `i` by one”. These three statements within the loop are optional though, as you can simply write `for(;;){...}` which would be an infinite loop.
+
+- **While Loop**
+  The `while` loop is similar to the `for` loop because it also runs *while* a condition is true. The difference between them is that you would use a `for` loop when you already know how many times you want the loop to be executed. A `while` loop is used when you are unsure about how many times the loop wants to run.
+
+  ```jsx
+  const edm = ['House', 'Dubstep', 'Drum and Bass'];
+
+  while (edm.length > 0) {
+    const genre = edm.pop();
+    console.log(genre);
+  } // 'Drum and Bass'
+  // 'Dubstep'
+  // 'House'
+  ```
+
+  This loop is saying “run the code in this code block only if the length of the `edm` array is less than 0. An infinite loop in this situation would be if the condition in the while loop is always true. Ex `while (true) {...}` .
+
+- **Do-while Loop**
+  Very similar to the `while` loop, this loop also runs on a `while` condition. However, it executes the condition after the fact.
+
+  ```jsx
+  const edm = ['House', 'Dubstep', 'Drum and Bass'];
+
+  let i = 0do {
+   console.log('I love dancing to' + edm[i])
+   i++;
+  } while (i < 3);
+
+  //'I love dancing to House'
+  //'I love dancing to Dubstep'
+  //'I love dancing to Drum and Bass'
+  ```
+
+  Here, we are saying “hey, log out this string and increase the value of `i` **only while** `i` is less than 3". The usage of this loop would be for when you want to loop through an element at least one time, no matter what.
