@@ -1,0 +1,50 @@
+In JavaScript, **`call`**, **`apply`**, and **`bind`** are methods that allow you to call a function with a specific value for **`this`** and pass in arguments as an array or a comma-separated list. These methods are useful when you want to reuse a function in different contexts or pass a function as a callback.
+
+Here are some examples of how to use **`call`**, **`apply`**, and **`bind`** in JavaScript:
+
+- Using **`call`**:
+
+  ```jsx
+  const greet = function (greeting) {
+    console.log(`${greeting}, my name is ${this.name}`);
+  };
+
+  const john = { name: 'John' };
+  const jane = { name: 'Jane' };
+
+  greet.call(john, 'Hello'); // Hello, my name is John
+  greet.call(jane, 'Hi'); // Hi, my name is Jane
+  ```
+
+  In this example, the **`greet`** function is called with a specific value for **`this`** using the **`call`** method. The first argument to **`call`** is the value for **`this`**, and the subsequent arguments are passed as arguments to the function.
+
+- Using **`apply`**:
+
+  ```jsx
+  const add = function (a, b) {
+    return a + b;
+  };
+
+  console.log(add.apply(null, [2, 3])); // 5
+  ```
+
+  In this example, the **`apply`** method is used to call the **`add`** function with a specific value for **`this`** (in this case, **`null`**) and an array of arguments.
+
+- Using **`bind`**:
+
+  ```jsx
+  const logName = function () {
+    console.log(`My name is ${this.name}`);
+  };
+
+  const john = { name: 'John' };
+  const jane = { name: 'Jane' };
+
+  const logJohnName = logName.bind(john);
+  const logJaneName = logName.bind(jane);
+
+  logJohnName(); // My name is John
+  logJaneName(); // My name is Jane
+  ```
+
+  In this example, the **`bind`** method is used to create new functions that are bound to a specific value for **`this`**. The **`bind`** method returns a new function with the specified **`this`** value and the same body as the original function. The new function can be invoked like any other function, and its value for **`this`** will always be the value passed to **`bind`**.

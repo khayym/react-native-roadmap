@@ -1,0 +1,79 @@
+In programming, an object is a data structure that stores data and behavior together in a single unit. Objects are instances of a class, which is a blueprint for creating objects. In JavaScript, objects can be created using object literals or constructor functions.
+An object consists of properties, which are key-value pairs that store data, and methods, which are functions that define the behavior of the object. For example, consider the following object:
+
+```jsx
+const person = {
+name: "John",
+age: 30,
+greet: function() {
+console.log("Hello, my name is " + [this.name](http://this.name/) + " and I am " + this.age + " years old.");
+}
+};
+```
+
+In this example, **`person`** is an object with three properties: **`name`**, **`age`**, and **`greet`**. The **`greet`** property is a method that logs a message to the console.
+To access the properties or methods of an object, you can use dot notation or bracket notation. For example:
+
+```jsx
+console.log(person.name); // Output: John
+console.log(person['age']); // Output: 30
+person.greet(); // Output: Hello, my name is John and I am 30 years old.
+```
+
+You can also add or modify properties and methods of an object at any time:
+
+```jsx
+person.email = 'john@example.com'; // Add a new property
+person.age = 31; // Modify an existing property
+person.goodbye = function () {
+  // Add a new method
+  console.log('Goodbye, ' + this.name + '!');
+};
+person.goodbye(); // Output: Goodbye, John!
+```
+
+Objects are a powerful and versatile tool in programming. They allow you to create complex data structures and encapsulate behavior in a way that is easy to understand and maintain.
+
+- Object methods
+
+  1. **`Object.assign(target, ...sources)`**: Copies the properties of one or more objects into a target object.
+  2. **`Object.create(proto, [propertiesObject])`**: Creates a new object with a specified prototype and properties.
+  3. **`Object.defineProperties(obj, properties)`**: Adds or modifies properties of an object.
+  4. **`Object.defineProperty(obj, prop, descriptor)`**: Adds or modifies a property of an object.
+  5. **`Object.entries(obj)`**: Returns an array of an object's enumerable property **`[key, value]`** pairs.
+  6. **`Object.freeze(obj)`**: Prevents an object from being modified.
+  7. **`Object.getOwnPropertyDescriptor(obj, prop)`**: Returns a property descriptor for an object's own property.
+  8. **`Object.getOwnPropertyDescriptors(obj)`**: Returns all own property descriptors for an object.
+  9. **`Object.getOwnPropertyNames(obj)`**: Returns an array of all own properties of an object.
+  10. **`Object.getPrototypeOf(obj)`**: Returns the prototype of an object.
+  11. **`Object.is(value1, value2)`**: Determines if two values are the same value.
+  12. **`Object.isExtensible(obj)`**: Determines if an object is extensible (can have new properties added).
+  13. **`Object.isFrozen(obj)`**: Determines if an object is frozen (cannot be modified).
+  14. **`Object.isSealed(obj)`**: Determines if an object is sealed (cannot be modified or have new properties added).
+  15. **`Object.keys(obj)`**: Returns an array of an object's enumerable property names.
+  16. **`Object.seal(obj)`**: Prevents new properties from being added to an object and marks all existing properties as non-configurable.
+  17. **`Object.values(obj)`**: Returns an array of an object's enumerable property values.
+
+- The prototype chain
+  The prototype chain in JavaScript is a mechanism for resolving property and method lookups on objects. When a property or method is accessed on an object, the JavaScript engine first looks for the property or method on that object. If it is not found, the engine will look for it in the object's prototype, and so on, up the prototype chain, until it reaches the end or finds the property or method.
+  Each object in the prototype chain is linked to the next object through its prototype reference, forming a chain of prototypes. The first object in the chain is the object that was used to access the property or method, and the last object in the chain is the object at the top of the prototype hierarchy, which is the **`Object`** constructor.
+  Here's an example of the prototype chain in action:
+
+  ```jsx
+  const person = {
+    name: 'John',
+    sayHello: function () {
+      console.log(`Hello, my name is ${this.name}`);
+    },
+  };
+
+  const employee = Object.create(person);
+  employee.position = 'Developer';
+
+  employee.sayHello(); // "Hello, my name is John"
+  console.log(employee.hasOwnProperty('name')); // false
+  console.log(employee.hasOwnProperty('position')); // true
+  ```
+
+  In this example, **`person`** is the prototype for **`employee`**, and **`employee`** inherits the **`name`** property and the **`sayHello()`** method from **`person`**. When **`employee.sayHello()`** is called, it logs "Hello, my name is John", indicating that the **`name`** property was found in **`person`** and not in **`employee`**. The **`hasOwnProperty()`** method is used to check if a property is directly on an object, rather than on its prototype, and it returns **`false`** for the **`name`** property and **`true`** for the **`position`** property.
+  The prototype chain allows objects to inherit properties and methods from other objects and makes it possible to create complex inheritance hierarchies. It is an important mechanism in JavaScript for organizing and structuring code.

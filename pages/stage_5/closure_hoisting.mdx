@@ -1,0 +1,44 @@
+    Closure:
+
+    Closure is a powerful feature in JavaScript that allows functions to remember the lexical scope in which they were defined, even if they are executed outside of that scope. This means that a function can access variables and parameters from its outer function, even after that outer function has returned. Closures can be used to create private variables and methods, as well as to create functions that can be invoked later with their own context.
+
+    Here is an example of a closure in ES6:
+
+    ```jsx
+    function outerFunction() {
+      const message = 'Hello, ';
+
+      function innerFunction(name) {
+        console.log(message + name);
+      }
+
+      return innerFunction;
+    }
+
+    const greet = outerFunction();
+    greet('John'); // logs "Hello, John"
+    ```
+
+    In this example, the outerFunction creates a variable **`message`** and a nested innerFunction. The innerFunction logs a message with the **`message`** variable and a parameter **`name`**. The outerFunction then returns the innerFunction.
+
+    When **`outerFunction()`** is called and assigned to the **`greet`** variable, it returns the **`innerFunction`**. **`greet`** is now a closure that has access to the **`message`** variable, even though **`outerFunction()`** has already returned. When **`greet('John')`** is called, it logs "Hello, John" because it has access to the **`message`** variable.
+
+    Hoisting:
+
+    Hoisting is a term used to describe the behavior of how variables and function declarations are processed in JavaScript. In JavaScript, variables and function declarations are moved to the top of their respective scope, which means they are available for use before they are declared. However, this behavior only applies to declarations and not to assignments.
+
+    Here is an example of hoisting in ES6:
+
+    ```jsx
+    function example() {
+      console.log(x); // undefined
+      var x = 'Hello, World!';
+      console.log(x); // logs "Hello, World!"
+    }
+
+    example();
+    ```
+
+    In this example, the **`example()`** function logs **`x`** before it is declared, which would normally result in a reference error. However, because of hoisting, the variable **`x`** is moved to the top of the function scope, making it available for use before it is declared. When **`console.log(x)`** is called again after the declaration, it logs "Hello, World!" as expected.
+
+    It's important to note that hoisting only applies to variable and function declarations, and not to assignments or initializations. In the example above, the variable **`x`** is hoisted but not its assignment.

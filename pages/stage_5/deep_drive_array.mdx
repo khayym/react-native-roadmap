@@ -1,0 +1,33 @@
+The following are some of the most commonly used array methods in JavaScript:
+
+- **`.filter()`** - The **`.filter()`** method returns a new array with all elements that pass the test implemented by the provided function.
+  ```jsx
+  const numbers = [1, 2, 3, 4, 5];
+  const evenNumbers = numbers.filter((x) => x % 2 === 0);
+  console.log(evenNumbers); // [2, 4]
+  ```
+- **`.map()`** - The **`.map()`** method returns a new array with the results of calling a provided function on every element in the original array.
+  ```jsx
+  const numbers = [1, 2, 3, 4, 5];
+  const squares = numbers.map((x) => x * x);
+  console.log(squares); // [1, 4, 9, 16, 25]
+  ```
+- **`.sort()`** - The **`.sort()`** method sorts the elements of an array in place and returns the array.
+  ```jsx
+  const numbers = [5, 4, 3, 2, 1];
+  numbers.sort((a, b) => a - b);
+  console.log(numbers); // [1, 2, 3, 4, 5]
+  ```
+- **`.reduce()`** - The **`.reduce()`** method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+  ```jsx
+  const numbers = [1, 2, 3, 4, 5];
+  const sum = numbers.reduce((acc, x) => acc + x, 0);
+  console.log(sum); // 15
+  ```
+- **`.find()`** - The **`.find()`** method returns the value of the first element in the array that satisfies the provided testing function. Otherwise **`undefined`** is returned.
+  ```jsx
+  const numbers = [1, 2, 3, 4, 5];
+  const evenNumber = numbers.find((x) => x % 2 === 0);
+  console.log(evenNumber); // 2
+  ```
+- Each of these methods provides a way to manipulate arrays in a different way, and they can be combined in various ways to solve complex problems. It's important to understand the behavior and limitations of each method so that you can choose the right one for the task at hand.

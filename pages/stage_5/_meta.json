@@ -1,0 +1,11 @@
+{
+  "this": "What is 'this' in JS",
+  "call_apply_bind": "Call, Apply, and bind methods",
+  "objects_overview": "Introducing JavaScript objects overview",
+  "rest_spread_operators": "Rest and Spread Operators (...)",
+  "deep_drive_array": "A Deeper Dive Into JavaScript Arrays : Copying methods and mutating methods & Iterative methods",
+  "class_methods_inheritance": "Classes, Methods and Inheritance",
+  "object_destruction": "Object destructuring",
+  "closure_hoisting": "Closure &  Hoisting",
+  "date": "Date and Date methods"
+}

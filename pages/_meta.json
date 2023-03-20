@@ -12,6 +12,9 @@
   "stage_4": {
     "title": "Stage 4: Intro to Control Flow"
   },
+  "stage_5": {
+    "title": "Stage 5: Jumping into JavaScript"
+  },
   "about": {
     "title": "About",
     "type": "page"

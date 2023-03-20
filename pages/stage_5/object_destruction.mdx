@@ -1,0 +1,39 @@
+    Object destructuring is a feature in ES6 that allows you to extract properties from an object and assign them to variables with the same name. It provides a convenient way to extract values from objects and use them in your code. Here's an example:
+
+    ```jsx
+    const person = { name: "John", age: 30, address: { city: "New York", state: "NY" } };
+
+    const { name, age } = person;
+
+    console.log(name); // Output: "John"
+    console.log(age); // Output: 30
+    ```
+
+    In this example, we define an object called **`person`** with properties for name, age, and address. We then use object destructuring to extract the **`name`** and **`age`** properties from the **`person`** object and assign them to variables with the same names. We can then use these variables in our code as needed.
+
+    Object destructuring can also be used to extract nested properties from an object. For example:
+
+    ```jsx
+    const person = { name: "John", age: 30, address: { city: "New York", state: "NY" } };
+
+    const { address: { city } } = person;
+
+    console.log(city); // Output: "New York"
+    ```
+
+    In this example, we use object destructuring to extract the **`city`** property from the nested **`address`** object within the **`person`** object. We do this by assigning the **`address`** property of **`person`** to a variable called **`address`**, and then extracting the **`city`** property from that variable.
+
+    Object destructuring can also provide default values for properties that may not exist in the object:
+
+    ```jsx
+    const person = { name: "John", age: 30 };
+
+    const { name, age, address = { city: "Unknown", state: "Unknown" } } = person;
+
+    console.log(address.city); // Output: "Unknown"
+    console.log(address.state); // Output: "Unknown"
+    ```
+
+    In this example, we define an object called **`person`** with properties for **`name`** and **`age`**. We then use object destructuring to extract the **`name`**, **`age`**, and **`address`** properties from the **`person`** object. Since the **`address`** property does not exist in the **`person`** object, we provide default values for its properties using object literal syntax.
+
+    In summary, object destructuring is a powerful feature in ES6 that allows you to extract properties from an object and assign them to variables with the same name. It provides a convenient way to extract values from objects and use them in your code, and can also be used to extract nested properties and provide default values for properties that may not exist in the object.
