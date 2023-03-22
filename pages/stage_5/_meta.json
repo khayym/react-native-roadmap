@@ -7,5 +7,6 @@
   "class_methods_inheritance": "Classes, Methods and Inheritance",
   "object_destruction": "Object destructuring",
   "closure_hoisting": "Closure &  Hoisting",
-  "date": "Date and Date methods"
+  "date": "Date and Date methods",
+  "window-object": "Window Object in JavaScript"
 }
