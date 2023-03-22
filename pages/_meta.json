@@ -15,6 +15,9 @@
   "stage_5": {
     "title": "Stage 5: Jumping into JavaScript"
   },
+  "stage_6": {
+    "title": "Stage 6: Asynchronous programming and APIs"
+  },
   "about": {
     "title": "About",
     "type": "page"

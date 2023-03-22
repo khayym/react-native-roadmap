@@ -1,0 +1,130 @@
+You’re going to love Async/Await. While `then` chains were indent-y and confusing, Async/Await is flat and simple. For this tutorial, I’m assuming you already know how [promises](https://medium.com/@mikecronin92/promises-promises-understanding-the-basics-of-js-promise-objects-dd5c656f2db4) and [fetch](https://itnext.io/that-data-looks-so-fetching-on-you-understanding-the-js-fetch-api-880eae0c8d25) work, so read those articles if you’re a bit fuzzy on the concepts. Also, Async/Await works in modern browsers, but if the code snippets don’t work, try switching to Chrome or Brave.
+
+# **Old vs. New**
+
+Let’s write a simple query using `.then`. You can run this code by copying it into your browser’s console. If CORS gives you trouble, try going to [jsonplaceholder](https://jsonplaceholder.typicode.com/) itself and running it there.
+
+```jsx
+constgetFirstUser = () => {
+  const url = 'https://jsonplaceholder.typicode.com/users/1';
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+};
+```
+
+This is the old way of doing it, but how would this look with Async/Await? Pretty similar, honestly:
+
+```jsx
+constgetSecondUser = async () => {
+  consturl = 'https://jsonplaceholder.typicode.com/users/2';
+  constresponse = await fetch(url);
+  console.log(awaitresponse.json());
+};
+```
+
+I really want you to see that Async/Await is nothing crazy, it’s just a refinement. The most immediate benefit is that we no longer need to worry about nesting. No more indenting madness each time you want to make a new call inside a chain of `.then`s!
+
+# **Breaking it down**
+
+The biggest thing to notice is the `async` keyword at the start of the function. That is important, you can only use the `await` keyword inside an `async` function \**\*\*(*unless* you’re in an environment that supports top level `await`). You can *call* that function anywhere you like, but we’ll talk more about that later. When inside an `async` function, any promise that you would’ve chained with a `.then` keyword now goes behind an `await`. That `await` is going to wait for the promise next to it to resolve before moving on with the program. It basically makes asynchronous actions synchronous. You can assign it to a variable, but you *don’t\* have to. If you don’t care about using the resolved value later, there’s no need to assign it.:
+
+```jsx
+constresponse = await fetch(url);
+// also valid:
+await fetch(url);
+```
+
+# **Async return values**
+
+Let’s try one of those fun tutorial experiments where it obviously won’t work, but I make you do it anyway because annoyance builds character. Tell me, what would happen if we tried logging the end result *outside* of the function?
+
+```jsx
+const getThirdUser = async () => {
+  const url = 'https://jsonplaceholder.typicode.com/users/3';
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
+};
+console.log(getThirdUser());
+```
+
+SpOiLEr alert, it gives you this garbage: `Promise { <pending> }`. What’s the deal? Earlier, I misleadingly said you could call the function anywhere, but it seems like this function doesn’t really work. And that’s because while you can *call* an async function anywhere, it still *always* returns a promise. Let me repeat that: **an async function will always wrap its return value in a `Promise.resolve`_._**
+In practice this doesn’t mean much. Promises are usually found in standalone functions like event handlers or mounting functions anyway. The only difference now is you give them the `async` keyword:
+
+```jsx
+const handleSubmit = (event) => {
+  event.preventDefault();
+  UserAdapter.checkUser(user).then((validUser) => setCurrentUser(validUser));
+};
+// is now:
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  const validUser = await UserAdapter.checkUser(user);
+  setCurrentUser(validUser);
+};
+```
+
+I’m mentioning this because I think miscalling `async` functions can cause a lot of confusion when you’re starting. You’ll try to use them like a regular function and get frustrated when it behaves differently.
+
+# **Async functions are still .thenable**
+
+Since each one returns a promise, that means an async function’s return value is still chainable. This comes in handy for using one liners or if you want to use the return value of an async function in a non-async scope. To accurately log out our response from the example above, it would be:
+
+```jsx
+getThirdUser().then(console.log);
+```
+
+And keep in mind, you can still use`.then` in an `async` function, just be sure to `await` it:
+
+```jsx
+const contrivedExample = async () => {
+  await getThirdUser().then(console.log);
+  // more function stuff
+};
+```
+
+# **The useless await**
+
+Let’s take another look at some of the above code again:
+
+```jsx
+const getThirdUser = async () => {
+  const url = 'https://jsonplaceholder.typicode.com/users/3';
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
+};
+```
+
+You see that final `await`? It’s not necessary. All `await` really does is wait for a promise to resolve. However, our main async function is about to wrap our return value in a promise. So, if the return value is just going to get turned back into a promise, we should avoid the extra delay and return a promise:
+
+```jsx
+const getThirdUser = async () => {
+  const url = 'https://jsonplaceholder.typicode.com/users/3';
+  const response = await fetch(url);
+  return response.json();
+};
+```
+
+And fun fact, a [linter would’ve warned you](https://eslint.org/docs/rules/no-return-await) of this exact situation.
+
+## **The final gotchas: forgotten awaits and handling errors**
+
+Hands down, the *most* common error with this new syntax is forgetting to put in an `await` when you need to. In our simple examples above, something will break if you forget, but that’s not always the case. If you’re working with an `async` function, and things start getting weird, make sure each asynchronous action is behind an `await`. Also, catching errors is back to normal. Instead of using a special `.catch`, you get to use regular `try/catch` blocks again:
+
+```jsx
+const getFourthUser = async () => {
+  try {
+    const url = 'https://jsonplaceholder.typicode.com/users/4';
+    const response = await fetch(url);
+    return response.json();
+  } catch (e) {
+    // handle error
+  }
+};
+```
+
+# **What are you awaiting for?**
+
+There you have it, the basics of Async/Await! We’re almost done with our asynchronous journey, but there’s still one more stop on this train, [Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all). So once you’re familiar with what you’ve learned here, take a dive into Promise.all and learn how to optimize multiple promises.
