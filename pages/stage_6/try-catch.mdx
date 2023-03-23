@@ -1,0 +1,130 @@
+    `try` — test a block of code for errors.
+
+    `catch` — handle the error.
+
+    `throw` — create custom errors.
+
+    `finally` — execute code, after try and catch, regardless of the result.
+
+    ## **The “try…catch” syntax**
+
+    The try…catch construct has two main blocks:
+
+    ```jsx
+    try {// code} catch (err) {// handling error}
+    ```
+
+    ## **The “try…catch” flow-chart**
+
+    ![https://miro.medium.com/v2/resize:fit:650/1*W75sKV_KAlC2LKPMa0xKcg.png](https://miro.medium.com/v2/resize:fit:650/1*W75sKV_KAlC2LKPMa0xKcg.png)
+
+    **Let’s see some example**
+
+    No error example:
+
+    ```jsx
+    try {
+    console.log('Start');
+    // ...no errors
+    console.log('End');
+    } catch (err) {
+    console.log('Catch is ignored, because there are no errors');
+    }
+    ```
+
+    In this code, there is no error that’s why the *catch* is ignored.
+
+    With error example:
+
+    ```jsx
+    try {
+    console.log('Start of try runs');
+    blablabla; // error, variable is not defined!
+    console.log('End(no reached)');
+    } catch (err) {
+    console.log(`Error has occurred!`,err);
+    }
+    ```
+
+    ## **`try...catch` only works for runtime errors**
+
+    For try…catch to work, the code must be runnable. In other words, it should be valid JavaScript.
+
+    ```jsx
+    try {
+      <<<<<<<<<
+    } catch (err) {
+      alert("Can't understand this code, it's invalid");
+    }
+    ```
+
+    So, try…catch can only handle errors that occur in a valid code. Such errors are called “runtime errors” or, sometimes, “exceptions”.
+
+    ## **try…catch works synchronously**
+
+    If an exception happens in the “scheduled” code, then try…catch won’t catch it:
+
+    ```jsx
+    try {
+      setTimeout(function() {
+        noSuchVariable; // script will stop/die here
+      }, 1000);
+    } catch (err) {
+      alert( "won't work" );
+    }
+    ```
+
+    To catch an exception inside a scheduled function, try…catch must be inside that function:
+
+    ```jsx
+    setTimeout(function() {
+      try {
+        noSuchVariable; // try...catch handles the error!
+      } catch {
+        alert( "error is caught here!" );
+      }
+    }, 1000);
+    ```
+
+    **The Error Object**
+
+    JavaScript has a built-in error object that provides error information when an error occurs.
+
+    The error object provides two useful properties: name and message.
+
+    name - Sets or returns an error name
+
+    message - Sets or returns an error message (a string)
+
+    ## **try…catch…finally**
+
+    The try…catch construct may have one more code clause: finally.
+
+    The extended syntax looks like this:
+
+    ```jsx
+    try {
+       ... try to execute
+    } catch (err) {
+       ... handle errors
+    } finally {
+       ... execute always
+    }
+    ```
+
+    Try running this code:
+
+    ```jsx
+    try {
+      alert( 'try' );
+      if (confirm('Make an error?')) BAD_CODE();
+    } catch (err) {
+      alert( 'catch' );
+    } finally {
+      alert( 'finally' );
+    }
+    ```
+
+    The code has two ways of execution:
+
+    If you answer “Yes” to “Make an error?”, then try → catch → finally.If you say “No”, then try → finally.
